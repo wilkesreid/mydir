@@ -1,0 +1,11 @@
+{
+  "name": "mydir",
+  "version": "0.0.1",
+  "description": "Easily register and recall aliases for commonly used directories.",
+  "main": "mydir.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Reid",
+  "license": "ISC"
+}
