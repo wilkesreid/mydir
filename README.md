@@ -1,6 +1,6 @@
 # mydir
 
-** Built for Mac OS X **
+**Built for Mac OS X**
 
 mydir is a command line tool that can help keep track of commonly used folders without cluttering up your environment variables. I often find that it's tedious to call `cd` over and over to get to the folder of the project I'm working in. This way I can easily and intuitively set an alias for my project folder.
 
@@ -49,7 +49,7 @@ For example:
 
 `mydir set MyProject ~/Documents/Projects/MyProject`
 
-** *Note*: the path provided must be absolute. **
+**Note: the path provided must be absolute.**
 
 ### Recall an alias
 
