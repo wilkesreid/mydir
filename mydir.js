@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const mkdirp = require('mkdirp');
-const source = require('shell-source');
 
 if (!/^darwin/.test(process.platform)) {
   console.log("mydir is currently built only for Mac OS X");
@@ -10,7 +9,7 @@ if (!/^darwin/.test(process.platform)) {
 }
 
 if (process.argv.length < 3) {
-  console.log("requires an argument");
+  console.log("\nmydir usage:\n\nmydir <alias>: recalls an alias's path\nmydir set <alias> <path>: creates an alias\nmydir rm <alias>: removes an alias\nmydir list: lists all existing aliases\n\ncmydir <alias>: changes working directory to path associated with given alias\n");
   return;
 }
 
@@ -31,9 +30,6 @@ mkdirp('/usr/local/var/mydir', (mkdirp_err) => {
         var data = JSON.parse(list);
 
         switch (process.argv[2]) {
-          case 'alias':
-            source(__dirname + '/mydir-alias.sh', (err)=>{});
-          break;
           case 'list':
             for (var key in data) {
               if (!data.hasOwnProperty(key)) continue;
