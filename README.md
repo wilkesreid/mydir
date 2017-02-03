@@ -15,4 +15,5 @@ Easily register and recall aliases for commonly used directories.
 ## Usage
 
 `mydir set MyProject ~/Documents/Projects/MyProject`
+
 `cd $(mydir MyProject)`
