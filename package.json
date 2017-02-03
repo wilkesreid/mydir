@@ -1,6 +1,6 @@
 {
   "name": "mydir",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Easily register and recall aliases for commonly used directories.",
   "main": "mydir.js",
   "scripts": {
