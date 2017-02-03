@@ -4,11 +4,17 @@
   "description": "Easily register and recall aliases for commonly used directories.",
   "main": "mydir.js",
   "scripts": {
+    "postinstall": "echo $'alias cmydir=\\'function _cmydir(){ cd $(mydir $1); }; _cmydir\\'' >> ~/.bash_profile",
+    "preuninstall": "echo \"$(cat ~/.bash_profile | sed /alias\\ cmydir/d)\" > ~/.bash_profile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "mydir": "mydir.js"
   },
   "author": "Samuel Reid",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "shell-source": "^1.1.0"
+  }
 }
