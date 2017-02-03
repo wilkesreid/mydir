@@ -68,3 +68,11 @@ The main usage of this is to `cd` into an aliased folder. This is how you would 
 Here's what's happening behind the scenes:
 
 `cd $(mydir MyProject)`
+
+### List
+
+To see all existing aliases, call `mydir list`
+
+### Remove
+
+To remove an existing alias, call `mydir rm <alias>`
