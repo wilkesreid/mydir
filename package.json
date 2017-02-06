@@ -4,8 +4,8 @@
   "description": "Easily register and recall aliases for commonly used directories.",
   "main": "mydir.js",
   "scripts": {
-    "postinstall": "echo $'alias cmydir=\\'function _cmydir(){ cd \"$(mydir $1)\"; }; _cmydir\\'' >> ~/.bash_profile",
-    "preuninstall": "echo \"$(cat ~/.bash_profile | sed /alias\\ cmydir/d)\" > ~/.bash_profile",
+    "postinstall": "echo $'alias cmydir=\\'function _cmydir(){ cd \"$(mydir $1)\"; }; _cmydir\\'' >> ~/.bashrc",
+    "preuninstall": "echo \"$(cat ~/.bashrc | sed /alias\\ cmydir/d)\" > ~/.bashrc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
