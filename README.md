@@ -21,7 +21,7 @@ You must have [npm/nodejs](https://docs.npmjs.com/getting-started/installing-nod
 
 In order to be able to call `cmydir <alias>` to instantly change to an aliased directory, run this in terminal after installation:
 
-`. ~/.bash_profile`
+`. ~/.bashrc`
 
 ## Tutorial
 
