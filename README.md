@@ -67,7 +67,7 @@ The main usage of this is to `cd` into an aliased folder. This is how you would 
 
 Here's what's happening behind the scenes:
 
-`cd $(mydir MyProject)`
+`cd "$(mydir MyProject)"`
 
 ### List
 
