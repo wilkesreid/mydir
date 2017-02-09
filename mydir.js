@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const exec = require('child_process').exec;
 
 if (!/^darwin/.test(process.platform)) {
   console.log("mydir is currently built only for Mac OS X");
@@ -47,17 +48,28 @@ mkdirp('/usr/local/var/mydir', (mkdirp_err) => {
           break;
           case 'rm':
             if (process.argv.length < 4) {
-              process.stdout.write("'rm' required one additional argument.\n");
+              process.stdout.write("'rm' requires one additional argument.\n");
             } else {
               delete data[process.argv[3]];
               fs.writeFileSync('/usr/local/var/mydir/list.json', JSON.stringify(data), 'utf8');
             }
           break;
           default:
-            if (data.hasOwnProperty(process.argv[2])) {
-              process.stdout.write(data[process.argv[2]]);
+            if (process.argv[2].includes("/")) {
+              var alias = process.argv[2].substring(0, process.argv[2].indexOf("/"));
+              var remainingPath = process.argv[2].substring(process.argv[2].indexOf("/") + 1);
+              if (data.hasOwnProperty(alias)) {
+                process.stdout.write(data[alias] + "/" + remainingPath);
+              } else {
+                process.stdout.write(".");
+              }
             } else {
-              process.stdout.write(".");
+              var alias = process.argv[2];
+              if (data.hasOwnProperty(alias)) {
+                process.stdout.write(data[alias]);
+              } else {
+                process.stdout.write(".");
+              }
             }
           break;
         }

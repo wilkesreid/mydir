@@ -69,6 +69,16 @@ Here's what's happening behind the scenes:
 
 `cd "$(mydir MyProject)"`
 
+If you call `mydir` with an alias that doesn't exist, it will return `.`.
+
+You can call `mydir` with an alias followed by a path. For example,
+
+`mydir MyProject/subfolder`
+
+And since `cmydir` just uses `mydir` behind the scenes, you can make a call like this:
+
+`cmydir MyProject/subfolder`
+
 ### List
 
 To see all existing aliases, call `mydir list`
